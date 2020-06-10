@@ -3,134 +3,1475 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/et3lt"
-        android:layout_width="85dp"
-        android:layout_height="45dp"
-
-        android:background="@drawable/bg_edittext"
-
-        android:ems="10"
-        android:inputType="number"
-        android:textAlignment="center"
-
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
-        app:layout_constraintEnd_toStartOf="@+id/et5lt"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/et5lt" />
-
-    <EditText
-        android:id="@+id/et5lt"
-        android:layout_width="85dp"
-        android:layout_height="45dp"
-
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_edittext"
-        android:ems="10"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
-        app:layout_constraintEnd_toStartOf="@+id/etYumurta"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/et3lt"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/etYumurta"
-        android:layout_width="85dp"
-        android:layout_height="45dp"
-        android:background="@drawable/bg_edittext"
-        android:ems="10"
-
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/et5lt"
-        app:layout_constraintTop_toTopOf="@+id/et5lt" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="3 litre"
-        android:textColor="@color/siyah"
-        app:layout_constraintBottom_toBottomOf="@+id/textView8"
-        app:layout_constraintEnd_toEndOf="@+id/et3lt"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/et3lt"
-        app:layout_constraintTop_toTopOf="@+id/textView8" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="5 litre"
-        android:textColor="@color/siyah"
-        app:layout_constraintEnd_toEndOf="@+id/et5lt"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/et5lt"
-        app:layout_constraintTop_toBottomOf="@+id/et5lt" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Yumurta"
-        android:textColor="@color/siyah"
-        app:layout_constraintBottom_toBottomOf="@+id/textView8"
-        app:layout_constraintEnd_toEndOf="@+id/etYumurta"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/etYumurta"
-        app:layout_constraintTop_toTopOf="@+id/textView8" />
-
-    <EditText
-        android:id="@+id/etSiparisNotu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="2dp"
-
-        android:drawableLeft="@drawable/note"
-        android:drawablePadding="8dp"
-        android:ems="10"
-        android:hint="Sipariş Notu"
-        android:inputType="none"
-
-        android:background="@drawable/bg_edittext"
-        android:paddingLeft="17dp"
-        android:paddingTop="10dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="10dp"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvZamanEkleDialog" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tvZamanEkleDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="12:21"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Çiğ Süt"
+                        android:textColor="@color/siyah" />
+
+                    <EditText
+                        android:id="@+id/etCigSut"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+
+                        android:layout_marginLeft="4dp"
+
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                </TableRow>
+
+
+
+            </TableLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPeynir"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Peynirler"
+                    android:textColor="@color/beyaz"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/asagiPeynir"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:background="@drawable/asagiok"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView6"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/yukariPeynir"
+
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:background="@drawable/yukariok"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView6"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TableLayout
+                android:id="@+id/tbPeynirler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
+                android:visibility="visible">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="500 GR T.YAĞLI BEYAZ PEYNİR"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:id="@+id/etBp500"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="800 GR T.YAĞLI BEYAZ PEYNİR"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="5 KG T.YAĞLI BEYAZ PEYNİR"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="17 KG T.YAĞLI BEYAZ PEYNİR"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="12sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="400 GR T.YAĞLI KAŞAR"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="700 GR T.YAĞLI KAŞAR"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="1 KG T.YAĞLI KAŞAR"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="2 KG T.YAĞLI PİDE KAŞAR"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="2 KG T.YAĞLI TOST KAŞAR"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="5 KG KÖY PEYNİRİ"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="15 KG KÖY PEYNİRİ"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="12sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="250 GR TULUM"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="ÇERKEZ PEYNİR"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="9 KG LOR"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="ÇÖKELEK"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+            </TableLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clYogurt"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:id="@+id/textView1221"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yoğurtlar"
+                    android:textColor="@color/beyaz"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/asagiYogurt"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:background="@drawable/asagiok"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView1221"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/yukariYogurt"
+
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:background="@drawable/yukariok"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView1221"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TableLayout
+                android:id="@+id/tbYogurtlar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="200 GR T.YAĞLI YOĞURT"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="200 GR Y.YAĞLI YOĞURT (V)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="500 GR T.YAĞLI YOĞURT"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="1250 GR T.YAĞLI YOĞURT"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="12sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="2 KG T.YAĞLI YOĞURT"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="9 KG T.YAĞLI YOĞURT"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="2750 GR TAVA YOĞURT"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="2 KG Y.YAĞLI YOĞURT(Doğal Maya)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="12sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="3 KG Y.YAĞLI YOĞURT (Doğal Maya)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="4 KG Y.YAĞLI YOĞURT (Doğal Maya)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="10 KG Y.YAĞLI YOĞURT (Doğal Maya)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="10 KG Y.YAĞLI YOĞURT (V)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="10 KG AZ YAĞLI YOĞURT (Özel)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="12sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="900 GR SÜZME YOĞURT"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="5 KG SÜZME YOĞURT"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="12sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+            </TableLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDigerleri"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/colorPrimary">
+
+                <ImageView
+                    android:id="@+id/asagiDiger"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:background="@drawable/asagiok"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView5"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/yukariDiger"
+
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:background="@drawable/yukariok"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView5"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Diğerleri"
+                    android:textColor="@color/beyaz"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TableLayout
+                android:id="@+id/tbDigerleri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
+                android:visibility="visible">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="1 LT AYRAN"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="290ML Y.YAĞLI AYRAN (11.00)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="220 ML Y.YAĞLI AYRAN (13.00)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="200 ML Y.YAĞLI AYRAN (12.00)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="180 ML Y.YAĞLI AYRAN (11.00)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="170 ML Y.YAĞLI AYRAN (10.00)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="150 ML Y.YAĞLI AYRAN (9.50)"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="500 GR TEREYAĞ"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="1 KG TEREYAĞ"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="1 KG TEREYAĞ KÖY TİPİ"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="1800 GR TEREYAĞ"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:text="200 GR KAYMAK"
+                        android:textAlignment="center"
+                        android:textColor="@color/siyah"
+                        android:textSize="13sp" />
+
+                    <EditText
+
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/tvZamanEkleDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="12:21"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etSiparisNotu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/bg_edittext"
+                android:drawableLeft="@drawable/note"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:hint="Sipariş Notu"
+                android:inputType="none"
+                android:paddingLeft="17dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

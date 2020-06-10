@@ -3,7 +3,6 @@ package com.example.amasyasut.Adapter
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -84,15 +83,15 @@ class TeslimEdilenlerAdapter(val myContext: Context, val siparisler: ArrayList<S
 
         val musteriAdSoyad = itemView.tvMusteriAdSoyad
         val teslimEden = itemView.tvSiparisGiren
-        val sut3lt = itemView.tv3lt
-        val sut5lt = itemView.tv5lt
+        val sut3lt = itemView.tvCigSut
+        val sut5lt = itemView.tvCokelek
         val zaman = itemView.tvZaman
 
 
         fun setData(siparisData: SiparisData) {
             musteriAdSoyad.text = siparisData.musteri_ad_soyad
-            sut3lt.text = siparisData.sut3lt
-            sut5lt.text = siparisData.sut5lt
+            sut3lt.text = siparisData.cig_sut
+            sut5lt.text = siparisData.cokelek
             zaman.text = TimeAgo.getTimeAgo(siparisData.siparis_teslim_zamani.toString().toLong())
             if (!siparisData.siparisi_giren.isNullOrEmpty()) {
                 teslimEden.text = siparisData.siparisi_giren.toString()

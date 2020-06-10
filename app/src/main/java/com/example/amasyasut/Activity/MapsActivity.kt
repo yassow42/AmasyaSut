@@ -1,11 +1,9 @@
 package com.example.amasyasut.Activity
 
-import android.Manifest
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
 import android.net.Uri
@@ -16,7 +14,6 @@ import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
 import com.example.amasyasut.BottomNavigationViewHelper
 import com.example.amasyasut.Datalar.SiparisData
 import com.example.amasyasut.R
@@ -87,7 +84,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.isMyLocationEnabled = konum
         // Add a marker in Sydney and move the camera
         val amasya = LatLng(40.6565, 35.8373)
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(amasya, 10.7f))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(amasya, 12.7f))
 
         handler.postDelayed({ veriler() }, 1000)
         handler.postDelayed({ progressDialog.dismiss() }, 5000)
@@ -144,12 +141,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                                     var lat = convertAddressLat(gelenData.siparis_mah + " mahallesi " + gelenData.siparis_adres + " Amasya 05000")!!.toDouble()
                                                     var long = convertAddressLng(gelenData.siparis_mah + " mahallesi " + gelenData.siparis_adres + " Amasya 39750")!!.toDouble()
                                                     val adres = LatLng(lat, long)
-                                                    var myMarker = mMap.addMarker(MarkerOptions().position(adres).title(gelenData.musteri_ad_soyad).snippet(gelenData.siparis_adres + " / " + gelenData.siparis_apartman))
+                                                    var myMarker = mMap.addMarker(
+                                                        MarkerOptions().position(adres).title(gelenData.musteri_ad_soyad).snippet(gelenData.siparis_adres + " / " + gelenData.siparis_apartman)
+                                                    )
                                                     progressDialog.dismiss()
                                                     myMarker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.order_map))
                                                     myMarker.tag = gelenData.siparis_key
                                                     val id = gelenData.siparis_mah.toString()
-                                                  myMarker.snippet = id
+                                                    myMarker.snippet = id
                                                 }
                                                 mMap.setOnMarkerClickListener {
                                                     it.tag
@@ -167,24 +166,31 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                                             try {
                                                                 var gelenData = p0.getValue(SiparisData::class.java)!!
                                                                 view.tvSiparisVeren.text = gelenData!!.musteri_ad_soyad
-                                                                view.tvSiparisAdres.text = gelenData!!.siparis_mah + " mah. " + gelenData!!.siparis_adres + " " + gelenData!!.siparis_apartman
+                                                                view.tvSiparisAdres.text = gelenData!!.siparis_mah + " Mah. " + gelenData!!.siparis_adres + " " + gelenData!!.siparis_apartman
                                                                 view.tvSiparisTel.text = gelenData.siparis_tel
                                                                 view.tvNot.text = gelenData.siparis_notu
-                                                                view.tv5lt.text = gelenData!!.sut5lt
-                                                                view.tv3lt.text = gelenData!!.sut3lt
+                                                                view.tvCokelek.text = gelenData!!.cokelek
+                                                                view.tvCigSut.text = gelenData!!.cig_sut
                                                             } catch (e: Exception) {
-                                                                Log.e("sad", e.message.toString())
+                                                                Log.e("haritalar", e.message.toString())
                                                             }
 
 
-                                                            var sut3ltFiyat = gelenData.sut3lt.toString().toInt()
-                                                            var sut5ltFiyat = gelenData.sut5lt.toString().toInt()
+                                                            var sut3ltFiyat = gelenData.cig_sut.toString().toInt()
+                                                            var sut5ltFiyat = gelenData.cokelek.toString().toInt()
                                                             view.tvFiyat.text = ((sut3ltFiyat * 16) + (sut5ltFiyat * 22)).toString() + " tl"
 
                                                             view.tvSiparisTel.setOnClickListener {
                                                                 val arama = Intent(Intent.ACTION_DIAL)//Bu kod satırımız bizi rehbere telefon numarası ile yönlendiri.
                                                                 arama.data = Uri.parse("tel:" + gelenData.siparis_tel)
                                                                 startActivity(arama)
+                                                            }
+                                                            view.tvSiparisAdres.setOnClickListener {
+                                                                val intent = Intent(
+                                                                    Intent.ACTION_VIEW,
+                                                                    Uri.parse("google.navigation:q= " + gelenData.siparis_mah + " " + gelenData.siparis_adres + " Amasya 0500")
+                                                                )
+                                                                startActivity(intent)
                                                             }
                                                             view.btnTeslim.setOnClickListener {
                                                                 var alert = AlertDialog.Builder(this@MapsActivity).setTitle("Sipariş Teslim Edildi").setMessage("Emin Misin ?")
@@ -201,8 +207,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                                                                 gelenData.siparis_notu,
                                                                                 gelenData.siparis_mah,
                                                                                 gelenData.siparis_key,
-                                                                                gelenData.sut3lt,
-                                                                                gelenData.sut5lt,
+                                                                                gelenData.cig_sut,
+                                                                                gelenData.cokelek,
                                                                                 gelenData.siparis_apartman,
                                                                                 gelenData.siparis_tel,
                                                                                 gelenData.musteri_zkonum,

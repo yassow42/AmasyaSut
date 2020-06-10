@@ -80,7 +80,7 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
 
                                     var siparisData = SiparisData(
                                         musteriAd, kullaniciAdi, item.siparis_zamani, item.siparis_teslim_zamani, item.siparis_teslim_tarihi, item.siparis_adres, item.siparis_notu,
-                                        item.siparis_mah, item.siparis_key, item.sut3lt, item.sut5lt, item.siparis_apartman, item.siparis_tel
+                                        item.siparis_mah, item.siparis_key, item.cig_sut, item.cokelek, item.siparis_apartman, item.siparis_tel
                                     )
 
                                     ref.child("Musteriler").child(musteriAd.toString()).child("siparisleri").child(item.siparis_key.toString()).setValue(siparisData)
@@ -111,8 +111,8 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
                         builder.setTitle(musteriAd)
                         builder.setIcon(R.drawable.cow)
                         //   view.tvMusteriAdSoyad.setText(siparisler[position].siparis_veren)
-                        viewDuzenle.et3lt.setText(siparisler[position].sut3lt)
-                        viewDuzenle.et5lt.setText(siparisler[position].sut5lt)
+                        viewDuzenle.etCigSut.setText(siparisler[position].cig_sut)
+                        viewDuzenle.etBp500.setText(siparisler[position].cokelek)
                         viewDuzenle.etSiparisNotu.setText(siparisler[position].siparis_notu)
 
                         viewDuzenle.tvZamanEkleDialog.text = SimpleDateFormat("HH:mm dd.MM.yyyy").format(item.siparis_teslim_tarihi)
@@ -152,17 +152,14 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
                             override fun onClick(dialog: DialogInterface?, which: Int) {
 
                                 var sut3lt = "0"
-                                if (viewDuzenle.et3lt.text.isNotEmpty()) {
-                                    sut3lt = viewDuzenle.et3lt.text.toString()
+                                if (viewDuzenle.etCigSut.text.isNotEmpty()) {
+                                    sut3lt = viewDuzenle.etCigSut.text.toString()
                                 }
                                 var sut5lt = "0"
-                                if (viewDuzenle.et5lt.text.isNotEmpty()) {
-                                    sut5lt = viewDuzenle.et5lt.text.toString()
+                                if (viewDuzenle.etBp500.text.isNotEmpty()) {
+                                    sut5lt = viewDuzenle.etBp500.text.toString()
                                 }
-                                var yumurta = "0"
-                                if (viewDuzenle.etYumurta.text.isNotEmpty()) {
-                                    yumurta = viewDuzenle.etYumurta.text.toString()
-                                }
+
 
                                 var ref = FirebaseDatabase.getInstance().reference
                                 var not = viewDuzenle.etSiparisNotu.text.toString()
@@ -175,7 +172,6 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
 
                                 ref.child("Musteriler").child(siparisVeren).child("siparisleri").child(siparisKey).child("sut3lt").setValue(sut3lt)
                                 ref.child("Musteriler").child(siparisVeren).child("siparisleri").child(siparisKey).child("sut5lt").setValue(sut5lt)
-                                ref.child("Musteriler").child(siparisVeren).child("siparisleri").child(siparisKey).child("yumurta").setValue(yumurta)
                                 ref.child("Musteriler").child(siparisVeren).child("siparisleri").child(siparisKey).child("siparis_notu").setValue(not)
                                 var intent = Intent(myContext, SiparislerActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                                 myContext.startActivity(intent)
@@ -236,9 +232,8 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
         val siparisVeren = itemView.tvSiparisVeren
         val siparisAdres = itemView.tvSiparisAdres
         val siparisTel = itemView.tvSiparisTel
-        val tv3lt = itemView.tv3lt
-        val tv5lt = itemView.tv5lt
-        val tvYumurta = itemView.tvYumurta
+        val cigSut = itemView.tvCigSut
+        val cokelek = itemView.tvCokelek
         val tvZaman = itemView.tvZaman
         val tvTeslimZaman = itemView.tvTeslimZamani
         val tvNot = itemView.tvNot
@@ -252,11 +247,11 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
             siparisTel.text = siparisData.siparis_tel
             tvNot.text = siparisData.siparis_notu
             siparisGiren.text = siparisData.siparisi_giren
-            siparisData.sut3lt.toString()?.let {
-                tv3lt.text = it
+            siparisData.cig_sut.toString()?.let {
+                cigSut.text = it
             }
-            siparisData.sut5lt.toString()?.let {
-                tv5lt.text = it
+            siparisData.cokelek.toString()?.let {
+                cokelek.text = it
             }
             siparisData.siparis_teslim_tarihi?.let {
                 tvTeslimZaman.text = formatDate(siparisData.siparis_teslim_tarihi).toString()
@@ -276,7 +271,7 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
             }
 
             siparisAdres.setOnClickListener {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q= " + siparisData.siparis_adres))
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q= " + siparisData.siparis_mah + " " + siparisData.siparis_adres + " Amasya 05000"))
                 myContext.startActivity(intent)
             }
 

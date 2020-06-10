@@ -269,37 +269,19 @@ class MusterilerActivity : AppCompatActivity() {
                                 override fun onClick(dialog: DialogInterface?, which: Int) {
 
                                     var sut3lt = "0"
-                                    if (dialogViewSpArama.et3lt.text.toString().isNotEmpty()) {
-                                        sut3lt = dialogViewSpArama.et3lt.text.toString()
+                                    if (dialogViewSpArama.etCigSut.text.toString().isNotEmpty()) {
+                                        sut3lt = dialogViewSpArama.etCigSut.text.toString()
                                     }
                                     var sut5lt = "0"
+                                    if (dialogViewSpArama.etBp500.text.toString().isNotEmpty()) {
+                                        sut5lt = dialogViewSpArama.etBp500.text.toString()
+                                    }
 
-                                    if (dialogViewSpArama.et5lt.text.toString().isNotEmpty()) {
-                                        sut5lt = dialogViewSpArama.et5lt.text.toString()
-                                    }
-                                    var yumurta = "0"
-                                    if (dialogViewSpArama.etYumurta.text.toString().isNotEmpty()) {
-                                        yumurta = dialogViewSpArama.etYumurta.text.toString()
-                                    }
 
                                     var siparisNotu = dialogViewSpArama.etSiparisNotu.text.toString()
                                     var siparisKey = FirebaseDatabase.getInstance().reference.child("Siparisler").push().key.toString()
-                                    var siparisData = SiparisData(
-                                        musteriData.musteri_ad_soyad.toString(),
-                                        kullaniciAdi.toString(),
-                                        null,
-                                        null,
-                                        cal.timeInMillis,
-                                        musteriData.musteri_adres,
-                                        siparisNotu,
-                                        musteriData.musteri_mah,
-                                        siparisKey,
-                                        sut3lt,
-                                        sut5lt,
-                                        musteriData.musteri_apartman.toString(),
-                                        musteriData.musteri_tel
+                                    var siparisData = SiparisData(musteriData.musteri_ad_soyad.toString(), kullaniciAdi.toString(), null, null, cal.timeInMillis, musteriData.musteri_adres, siparisNotu, musteriData.musteri_mah, siparisKey, sut3lt, sut5lt, musteriData.musteri_apartman.toString(), musteriData.musteri_tel)
 
-                                    )
                                     FirebaseDatabase.getInstance().reference.child("Siparisler").child(siparisKey).setValue(siparisData)
                                     FirebaseDatabase.getInstance().reference.child("Siparisler").child(siparisKey).child("siparis_zamani").setValue(ServerValue.TIMESTAMP)
                                     FirebaseDatabase.getInstance().reference.child("Siparisler").child(siparisKey).child("siparis_teslim_zamani").setValue(ServerValue.TIMESTAMP)

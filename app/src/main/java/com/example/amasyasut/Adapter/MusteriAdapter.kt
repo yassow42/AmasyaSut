@@ -11,8 +11,6 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.inflate
@@ -86,6 +84,7 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                     TimePickerDialog(myContext, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
                 }
 
+                dialogViewButton(dialogViewSp)
 
 
                 builder.setNegativeButton("İptal", object : DialogInterface.OnClickListener {
@@ -98,13 +97,13 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                     override fun onClick(dialog: DialogInterface?, which: Int) {
 
                         var sut3lt = "0"
-                        if (dialogViewSp.et3lt.text.toString().isNotEmpty()) {
-                            sut3lt = dialogViewSp.et3lt.text.toString()
+                        if (dialogViewSp.etCigSut.text.toString().isNotEmpty()) {
+                            sut3lt = dialogViewSp.etCigSut.text.toString()
                         }
                         var sut5lt = "0"
 
-                        if (dialogViewSp.et5lt.text.toString().isNotEmpty()) {
-                            sut5lt = dialogViewSp.et5lt.text.toString()
+                        if (dialogViewSp.etBp500.text.toString().isNotEmpty()) {
+                            sut5lt = dialogViewSp.etBp500.text.toString()
                         }
 
 
@@ -209,24 +208,17 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                                     list = ArrayList()
                                     if (p0.child("siparisleri").hasChildren()) {
 
-                                        var sut3ltSayisi = 0
-                                        var sut5ltSayisi = 0
-                                        var yumurtaSayisi = 0
+
 
                                         for (ds in p0.child("siparisleri").children) {
                                             var gelenData = ds.getValue(SiparisData::class.java)!!
                                             list.add(gelenData)
 
-                                            sut3ltSayisi = gelenData.sut3lt!!.toInt() + sut3ltSayisi
-                                            sut5ltSayisi = gelenData.sut5lt!!.toInt() + sut5ltSayisi
 
 
                                         }
 
-                                        dialogView.tv3litre.text = "3lt: " + sut3ltSayisi.toString()
-                                        dialogView.tv5litre.text = "5lt: " + sut5ltSayisi.toString()
-                                        dialogView.tvYumurta.text = "Yumurta: " + yumurtaSayisi.toString()
-                                        dialogView.tvFiyatGenel.text = ((sut3ltSayisi * 16) + (sut5ltSayisi * 22) + yumurtaSayisi).toString() + " tl"
+
 
 
                                         dialogView.rcSiparisGidilen.layoutManager = LinearLayoutManager(myContext, LinearLayoutManager.VERTICAL, false)
@@ -275,6 +267,50 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
             }
         } catch (e: Exception) {
             Toast.makeText(myContext, "332. satır hatasıMusteriAdapter", Toast.LENGTH_LONG).show()
+        }
+
+
+    }
+
+    private fun dialogViewButton(dialogViewSp: View) {
+        dialogViewSp.tbYogurtlar.visibility = View.GONE
+        dialogViewSp.tbDigerleri.visibility = View.GONE
+        dialogViewSp.tbPeynirler.visibility = View.GONE
+
+
+        dialogViewSp.asagiPeynir.setOnClickListener {
+            dialogViewSp.tbPeynirler.visibility = View.VISIBLE
+            dialogViewSp.yukariPeynir.visibility = View.VISIBLE
+            dialogViewSp.asagiPeynir.visibility = View.GONE
+        }
+        dialogViewSp.yukariPeynir.setOnClickListener {
+            dialogViewSp.tbPeynirler.visibility = View.GONE
+            dialogViewSp.yukariPeynir.visibility = View.GONE
+            dialogViewSp.asagiPeynir.visibility = View.VISIBLE
+
+        }
+
+        dialogViewSp.asagiYogurt.setOnClickListener {
+            dialogViewSp.tbYogurtlar.visibility = View.VISIBLE
+            dialogViewSp.yukariYogurt.visibility = View.VISIBLE
+            dialogViewSp.asagiYogurt.visibility = View.GONE
+        }
+        dialogViewSp.yukariYogurt.setOnClickListener {
+            dialogViewSp.tbYogurtlar.visibility = View.GONE
+            dialogViewSp.yukariYogurt.visibility = View.GONE
+            dialogViewSp.asagiYogurt.visibility = View.VISIBLE
+
+        }
+        dialogViewSp.asagiDiger.setOnClickListener {
+            dialogViewSp.tbDigerleri.visibility = View.VISIBLE
+            dialogViewSp.yukariDiger.visibility = View.VISIBLE
+            dialogViewSp.asagiDiger.visibility = View.GONE
+        }
+        dialogViewSp.yukariDiger.setOnClickListener {
+            dialogViewSp.tbDigerleri.visibility = View.GONE
+            dialogViewSp.yukariDiger.visibility = View.GONE
+            dialogViewSp.asagiDiger.visibility = View.VISIBLE
+
         }
 
 

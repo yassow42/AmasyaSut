@@ -47,7 +47,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvSiparisTel" />
 
         <TextView
-            android:id="@+id/tv5lt"
+            android:id="@+id/tvCokelek"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -59,7 +59,7 @@
             app:layout_constraintTop_toTopOf="@+id/tv5litre" />
 
         <TextView
-            android:id="@+id/tv3lt"
+            android:id="@+id/tvCigSut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -174,7 +174,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/tvYumurtaYazisi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.2"
-            app:layout_constraintStart_toEndOf="@+id/tv5lt"
+            app:layout_constraintStart_toEndOf="@+id/tvCokelek"
             app:layout_constraintTop_toTopOf="@+id/tv3litre" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

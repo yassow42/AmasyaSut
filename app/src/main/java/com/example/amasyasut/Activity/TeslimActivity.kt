@@ -19,7 +19,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 
-import kotlinx.android.synthetic.main.activity_siparisler.bottomNav
 import kotlinx.android.synthetic.main.activity_teslim.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -121,8 +120,8 @@ class TeslimActivity : AppCompatActivity() {
 
                 if (calZamandan.timeInMillis < ds.siparis_teslim_zamani!!.toLong() && ds.siparis_teslim_zamani!!.toLong() < calZamana.timeInMillis) {
                     suankiTeslimList.add(ds)
-                    sut3ltSayisi = ds.sut3lt!!.toInt() + sut3ltSayisi
-                    sut5ltSayisi = ds.sut5lt!!.toInt() + sut5ltSayisi
+//                    sut3ltSayisi = ds.cig_sut!!.toInt() + sut3ltSayisi
+      //              sut5ltSayisi = ds.cokelek!!.toInt() + sut5ltSayisi
                 }
 
                 suankiTeslimList.sortByDescending { it.siparis_teslim_zamani }
@@ -147,8 +146,8 @@ class TeslimActivity : AppCompatActivity() {
                             if (calZamandan.timeInMillis < ds.siparis_teslim_zamani!!.toLong() && ds.siparis_teslim_zamani!!.toLong() < calZamana.timeInMillis) {
                                 if (ds.siparisi_giren == "Samet") {
                                     suankiTeslimList.add(ds)
-                                    sut3ltSayisi = ds.sut3lt!!.toInt() + sut3ltSayisi
-                                    sut5ltSayisi = ds.sut5lt!!.toInt() + sut5ltSayisi
+                                    sut3ltSayisi = ds.cig_sut!!.toInt() + sut3ltSayisi
+                                    sut5ltSayisi = ds.cokelek!!.toInt() + sut5ltSayisi
 
                                 }
                             }
@@ -167,8 +166,8 @@ class TeslimActivity : AppCompatActivity() {
 
                                 if (ds.siparisi_giren == "Umit") {
                                     suankiTeslimList.add(ds)
-                                    sut3ltSayisi = ds.sut3lt!!.toInt() + sut3ltSayisi
-                                    sut5ltSayisi = ds.sut5lt!!.toInt() + sut5ltSayisi
+                                    sut3ltSayisi = ds.cig_sut!!.toInt() + sut3ltSayisi
+                                    sut5ltSayisi = ds.cokelek!!.toInt() + sut5ltSayisi
 
                                 }
 
@@ -189,8 +188,8 @@ class TeslimActivity : AppCompatActivity() {
 
                                 if (ds.siparisi_giren == "Nihat") {
                                     suankiTeslimList.add(ds)
-                                    sut3ltSayisi = ds.sut3lt!!.toInt() + sut3ltSayisi
-                                    sut5ltSayisi = ds.sut5lt!!.toInt() + sut5ltSayisi
+                                    sut3ltSayisi = ds.cig_sut!!.toInt() + sut3ltSayisi
+                                    sut5ltSayisi = ds.cokelek!!.toInt() + sut5ltSayisi
 
                                 }
 
@@ -242,8 +241,8 @@ class TeslimActivity : AppCompatActivity() {
                                 butunTeslimList.add(gelenData)
                                 if (gece3GelenZaman - 86400000 < gelenData.siparis_teslim_zamani!!.toLong() && gelenData.siparis_teslim_zamani!!.toLong() < gece3GelenZaman) {
                                     suankiTeslimList.add(gelenData)
-                                    sut3ltSayisi = gelenData.sut3lt!!.toInt() + sut3ltSayisi
-                                    sut5ltSayisi = gelenData.sut5lt!!.toInt() + sut5ltSayisi
+                                    sut3ltSayisi = gelenData.cig_sut!!.toInt() + sut3ltSayisi
+                                    sut5ltSayisi = gelenData.cokelek!!.toInt() + sut5ltSayisi
 
                                 }
                             }
