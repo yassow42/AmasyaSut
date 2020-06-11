@@ -8,6 +8,7 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,8 +21,6 @@ import com.example.amasyasut.R
 import com.example.amasyasut.TimeAgo
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-
-import kotlinx.android.synthetic.main.dialog_siparis_ekle.view.*
 import kotlinx.android.synthetic.main.item_siparisler.view.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -63,7 +62,11 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
 
     override fun onBindViewHolder(holder: SiparisHolder, position: Int) {
         val item = siparisler[position]
+
         holder.setData(siparisler[position])
+        holder.adetGosterim(siparisler[position])
+        holder.fiyatHesaplama(siparisler[position])
+        holder.telAdres(siparisler[position])
         holder.itemView.setOnLongClickListener {
             var musteriAd = siparisler[position].musteri_ad_soyad
             val popup = PopupMenu(myContext, holder.itemView)
@@ -80,7 +83,11 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
 
                                     var siparisData = SiparisData(
                                         musteriAd, kullaniciAdi, item.siparis_zamani, item.siparis_teslim_zamani, item.siparis_teslim_tarihi, item.siparis_adres, item.siparis_notu,
-                                        item.siparis_mah, item.siparis_key, item.cig_sut, item.cokelek, item.siparis_apartman, item.siparis_tel
+                                        item.siparis_mah, item.siparis_key, item.siparis_apartman, item.siparis_tel, false, null, null,
+                                        item.zz_3litre,
+                                        item.zz_3litreFiyat,
+                                        item.zz_5litre,
+                                        item.zz_5litreFiyat
                                     )
 
                                     ref.child("Musteriler").child(musteriAd.toString()).child("siparisleri").child(item.siparis_key.toString()).setValue(siparisData)
@@ -111,8 +118,8 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
                         builder.setTitle(musteriAd)
                         builder.setIcon(R.drawable.cow)
                         //   view.tvMusteriAdSoyad.setText(siparisler[position].siparis_veren)
-                        viewDuzenle.etCigSut.setText(siparisler[position].cig_sut)
-                        viewDuzenle.etBp500.setText(siparisler[position].cokelek)
+                        viewDuzenle.et3lt.setText(siparisler[position].zz_3litre)
+                        viewDuzenle.et5lt.setText(siparisler[position].zz_5litre)
                         viewDuzenle.etSiparisNotu.setText(siparisler[position].siparis_notu)
 
                         viewDuzenle.tvZamanEkleDialog.text = SimpleDateFormat("HH:mm dd.MM.yyyy").format(item.siparis_teslim_tarihi)
@@ -152,8 +159,8 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
                             override fun onClick(dialog: DialogInterface?, which: Int) {
 
                                 var sut3lt = "0"
-                                if (viewDuzenle.etCigSut.text.isNotEmpty()) {
-                                    sut3lt = viewDuzenle.etCigSut.text.toString()
+                                if (viewDuzenle.et3lt.text.isNotEmpty()) {
+                                    sut3lt = viewDuzenle.et3lt.text.toString()
                                 }
                                 var sut5lt = "0"
                                 if (viewDuzenle.etBp500.text.isNotEmpty()) {
@@ -224,6 +231,7 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
             return@setOnLongClickListener true
         }
 
+
     }
 
     inner class SiparisHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -232,13 +240,143 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
         val siparisVeren = itemView.tvSiparisVeren
         val siparisAdres = itemView.tvSiparisAdres
         val siparisTel = itemView.tvSiparisTel
-        val cigSut = itemView.tvCigSut
-        val cokelek = itemView.tvCokelek
         val tvZaman = itemView.tvZaman
         val tvTeslimZaman = itemView.tvTeslimZamani
         val tvNot = itemView.tvNot
         val tvFiyat = itemView.tvFiyat
         val siparisGiren = itemView.tvSiparisGiren
+
+        val tb3lt = itemView.tb3lt
+        val tv3ltSut = itemView.tv3ltSut
+
+        val tb5lt = itemView.tb5lt
+        val tv5ltSut = itemView.tv5ltSut
+
+        val tvCokelek = itemView.tvCokelek
+        val tbCokelek = itemView.tbCokelek
+
+        val tvTulum250  = itemView.tvTulum250
+        val tbTulum250  = itemView.tbTulum250
+
+        val tvKoy15kg  = itemView.tvKoy15Kg
+        val tbKoy15kg  = itemView.tbKoy15Kg
+
+        val tvKoy5kg  = itemView.tvKoy5Kg
+        val tbKoy5kg  = itemView.tbKoy5Kg
+
+        val tvKaymak200gr  = itemView.tvKaymak200Gr
+        val tbKaymak200gr  = itemView.tbKaymak200Gr
+
+        val tvBp17Kg  = itemView.tvBp17Kg
+        val tbBp17Kg  = itemView.tbBp17Kg
+
+        val tvCerkezPeynir  = itemView.tvCerkezPeynir
+        val tbCerkezPeynir  = itemView.tbCerkezPeynir
+
+        val tvBp5Kg  = itemView.tvBp5Kg
+        val tbBp5Kg  = itemView.tbBp5Kg
+
+        val tvBp800  = itemView.tvBp800
+        val tbBp800  = itemView.tbBp800
+
+        val tvBp500  = itemView.tvBp500
+        val tbBp500  = itemView.tbBp500
+
+        val tvTereyag1800  = itemView.tvTereyag1800
+        val tbTereyag1800  = itemView.tbTereyag1800
+
+        val tvTereyag1Kg  = itemView.tvTereyag1Kg
+        val tbTereyag1Kg  = itemView.tbTereyag1Kg
+
+        val tvTereyag1KgKoy  = itemView.tvTereyag1KgKoy
+        val tbTereyag1KgKoy  = itemView.tbTereyag1KgKoy
+
+        val tvTereyag500  = itemView.tvTereyag500
+        val tbTereyag500  = itemView.tbTereyag500
+
+        val tvYogurtSuzme5Kg  = itemView.tvYogurtSuzme5Kg
+        val tbYogurtSuzme5Kg  = itemView.tbYogurtSuzme5Kg
+
+        val tvYogurtSuzme900  = itemView.tvYogurtSuzme900
+        val tbYogurtSuzme900  = itemView.tbYogurtSuzme900
+
+        val tvLor9Kg  = itemView.tvLor9Kg
+        val tbLor9Kg  = itemView.tbLor9Kg
+
+        val tvTostKasar2kg  = itemView.tvTostKasar2kg
+        val tbTostKasar2kg  = itemView.tbTostKasar2kg
+
+        val tvPideKasar2Kg  = itemView.tvPideKasar2Kg
+        val tbPideKasar2Kg  = itemView.tbPideKasar2Kg
+
+        val tvKasar1KG  = itemView.tvKasar1KG
+        val tbKasar1KG  = itemView.tbKasar1KG
+
+        val tvKasar400  = itemView.tvKasar400
+        val tbKasar400  = itemView.tbKasar400
+
+        val tvKasar700  = itemView.tvKasar700Gr
+        val tbKasar700  = itemView.tbKasar700Gr
+
+        val tvAyran150  = itemView.tvAyran150
+        val tbAyran150  = itemView.tbAyran150
+
+        val tvAyran170  = itemView.tvAyran170
+        val tbAyran170  = itemView.tbAyran170
+
+        val tvAyran180  = itemView.tvAyran180
+        val tbAyran180  = itemView.tbAyran180
+
+        val tvAyran200  = itemView.tvAyran200
+        val tbAyran200  = itemView.tbAyran200
+
+        val tvAyran220  = itemView.tvAyran220
+        val tbAyran220  = itemView.tbAyran220
+
+        val tvAyran290  = itemView.tvAyran290
+        val tbAyran290  = itemView.tbAyran290
+
+        val tvAyran1lt  = itemView.tvAyran1lt
+        val tbAyran1lt  = itemView.tbAyran1lt
+
+        val tvYogurt10KgAzyagli  = itemView.tvYogurt10KgAzyagli
+        val tbYogurt10KgAzyagli  = itemView.tbYogurt10KgAzyagli
+
+        val tvYogurt10KgV = itemView.tvYogurt10KgV
+        val tbYogurt10KgV = itemView.tbYogurt10KgV
+
+        val tvYogurt200V = itemView.tvYogurt200V
+        val tbYogurt200V = itemView.tbYogurt200V
+
+        val tvYogurt10KgDm = itemView.tvYogurt10KgDm
+        val tbYogurt10KgDm = itemView.tbYogurt10KgDm
+
+        val tvYogurt4KgDm = itemView.tvYogurt4KgDm
+        val tbYogurt4KgDm = itemView.tbYogurt4KgDm
+
+        val tvYogurt3KgDm = itemView.tvYogurt3KgDm
+        val tbYogurt3KgDm = itemView.tbYogurt3KgDm
+
+        val tvYogurt2KgDm = itemView.tvYogurt2KgDm
+        val tbYogurt2KgDm = itemView.tbYogurt2KgDm
+
+        val tvYogurt2750tava = itemView.tvYogurt2750tava
+        val tbYogurt2750tava = itemView.tbYogurt2750tava
+
+        val tvYogurtTam9Kg = itemView.tvYogurtTam9Kg
+        val tbYogurtTam9Kg = itemView.tbYogurtTam9Kg
+
+        val tvYogurtTam2Kg = itemView.tvYogurtTam2Kg
+        val tbYogurtTam2Kg = itemView.tbYogurtTam2Kg
+
+        val tvYogurttam1250 = itemView.tvYogurttam1250
+        val tbYogurttam1250 = itemView.tbYogurttam1250
+
+        val tbYogurtTam500 = itemView.tbYogurtTam500
+        val tvYogurtTam500 = itemView.tvYogurtTam500
+
+        val tbYogurtTam200 = itemView.tbYogurtTam200
+        val tvYogurtTam200 = itemView.tvYogurtTam200
 
 
         fun setData(siparisData: SiparisData) {
@@ -247,12 +385,13 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
             siparisTel.text = siparisData.siparis_tel
             tvNot.text = siparisData.siparis_notu
             siparisGiren.text = siparisData.siparisi_giren
-            siparisData.cig_sut.toString()?.let {
-                cigSut.text = it
-            }
-            siparisData.cokelek.toString()?.let {
-                cokelek.text = it
-            }
+
+            tb3lt.visibility = View.GONE
+            tb5lt.visibility = View.GONE
+
+
+
+
             siparisData.siparis_teslim_tarihi?.let {
                 tvTeslimZaman.text = formatDate(siparisData.siparis_teslim_tarihi).toString()
             }
@@ -261,9 +400,46 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
             }
 
 
+        }
 
+        fun adetGosterim(siparisData: SiparisData) {
 
+            if (siparisData.zz_3litre.toString() == "0") {
+                tb3lt.visibility = View.GONE
+            }else {
+                tv3ltSut.text = siparisData.zz_3litre.toString()
+                tb3lt.visibility = View.VISIBLE
+            }
+            if (siparisData.zz_5litre.toString() == "0") {
+                tb3lt.visibility = View.GONE
+            }else {
+                tv5ltSut.text = siparisData.zz_5litre.toString()
+                tb5lt.visibility = View.VISIBLE
+            }
+/*
+            siparisData.zz_3litre.toString()?.let {
+                tv3lt.text = it
 
+            }
+            siparisData.zz_5litre.toString()?.let {
+                tv5lt.text = it
+                tb5lt.visibility = View.VISIBLE
+
+            }*/
+        }
+
+        fun fiyatHesaplama(siparisData: SiparisData) {
+            /*
+            var sut3ltAdet = siparisData.zz_3litre.toString().toInt()
+            var sut3ltFiyat = siparisData.zz_3litreFiyat.toString().toDouble()
+            var sut5ltAdet = siparisData.zz_5litre.toString().toInt()
+            var sut5ltFiyat = siparisData.zz_5litreFiyat.toString().toDouble()
+
+            tvFiyat.text = ((sut3ltAdet * sut3ltFiyat) + (sut5ltAdet * sut5ltFiyat)).toString() + " TL"
+            Log.e("sad", ((sut3ltAdet * sut3ltFiyat) + (sut5ltAdet * sut5ltFiyat)).toString())*/
+        }
+
+        fun telAdres(siparisData: SiparisData) {
             siparisTel.setOnClickListener {
                 val arama = Intent(Intent.ACTION_DIAL)//Bu kod satırımız bizi rehbere telefon numarası ile yönlendiri.
                 arama.data = Uri.parse("tel:" + siparisData.siparis_tel)
@@ -274,10 +450,7 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q= " + siparisData.siparis_mah + " " + siparisData.siparis_adres + " Amasya 05000"))
                 myContext.startActivity(intent)
             }
-
-
         }
-
 
         fun formatDate(miliSecond: Long?): String? {
             if (miliSecond == null) return "0"

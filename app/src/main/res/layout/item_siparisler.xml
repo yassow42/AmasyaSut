@@ -132,7 +132,9 @@
         app:layout_constraintBottom_toTopOf="@+id/tvFiyat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view">
+
         <TableRow
+            android:id="@+id/tb3lt"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -140,14 +142,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="Ciğ Süt"
+                android:text="3 Litre Süt:"
                 android:textAlignment="textEnd"
                 android:textColor="@color/beyaz"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvCigSut"
+                android:id="@+id/tv3ltSut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -158,7 +160,37 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </TableRow>
+
         <TableRow
+            android:id="@+id/tb5lt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="5 Litre Süt:"
+                android:textAlignment="textEnd"
+                android:textColor="@color/beyaz"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv5ltSut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/beyaz"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbCokelek"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -186,11 +218,11 @@
                 android:textStyle="bold" />
         </TableRow>
 
-
         <TableRow
+            android:id="@+id/tbTulum250"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
 
@@ -203,6 +235,7 @@
 
 
             <TextView
+                android:id="@+id/tvTulum250"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -215,9 +248,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbKoy15Kg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -228,6 +262,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvKoy15Kg"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -240,9 +276,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbKoy5Kg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -253,6 +290,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvKoy5Kg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -265,9 +303,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbKaymak200Gr"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -278,6 +317,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvKaymak200Gr"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -290,9 +331,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbBp17Kg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -303,6 +345,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvBp17Kg"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -315,9 +359,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbCerkezPeynir"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:id="@+id/textView"
@@ -329,6 +374,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvCerkezPeynir"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -341,9 +388,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbBp5Kg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -354,6 +402,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvBp5Kg"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -366,34 +416,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbBp800"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="5 KG T.YAĞLI BEYAZ P"
-                android:textColor="@color/beyaz"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="center"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/beyaz"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -404,6 +430,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvBp800"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -416,9 +444,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbBp500"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -429,6 +458,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvBp500"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -441,59 +472,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbTereyag1800"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="5 KG T.YAĞLI BEYAZ P"
-                android:textColor="@color/beyaz"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="center"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/beyaz"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="5 KG T.YAĞLI BEYAZ P"
-                android:textColor="@color/beyaz"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="center"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/beyaz"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -504,6 +486,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvTereyag1800"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -516,9 +500,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbTereyag1KgKoy"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -529,6 +514,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvTereyag1KgKoy"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -541,9 +528,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbTereyag1Kg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -554,6 +542,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvTereyag1Kg"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -566,9 +556,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbTereyag500"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -579,6 +570,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvTereyag500"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -591,9 +584,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbYogurtSuzme5Kg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -604,6 +598,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvYogurtSuzme5Kg"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -616,9 +612,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbYogurtSuzme900"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -629,6 +626,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvYogurtSuzme900"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -641,9 +639,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbLor9Kg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -654,6 +653,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvLor9Kg"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -666,9 +667,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbTostKasar2kg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -679,6 +681,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvTostKasar2kg"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -691,9 +695,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbPideKasar2Kg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -704,6 +709,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvPideKasar2Kg"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -716,9 +723,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbKasar1KG"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -729,6 +737,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvKasar1KG"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -741,9 +751,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbKasar700Gr"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -754,6 +765,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvKasar700Gr"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -766,9 +779,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbKasar400"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -779,6 +793,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvKasar400"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -791,9 +807,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbAyran150"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -804,6 +821,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvAyran150"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -816,9 +835,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbAyran170"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -829,6 +849,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvAyran170"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -840,11 +862,11 @@
                 android:textStyle="bold" />
         </TableRow>
 
-
         <TableRow
+            android:id="@+id/tbAyran180"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -855,6 +877,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvAyran180"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -867,9 +891,11 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbAyran200"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -880,6 +906,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvAyran200"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -892,9 +920,11 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbAyran220"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -905,6 +935,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvAyran220"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -917,9 +949,11 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbAyran290"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -930,6 +964,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvAyran290"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -942,9 +978,11 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbAyran1lt"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -955,6 +993,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvAyran1lt"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -967,9 +1007,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbYogurt10KgAzyagli"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -980,6 +1021,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvYogurt10KgAzyagli"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -992,9 +1035,10 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbYogurt10KgV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1005,6 +1049,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvYogurt10KgV"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -1014,237 +1060,14 @@
                 android:textColor="@color/beyaz"
                 android:textSize="12sp"
                 android:textStyle="bold" />
+
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbYogurt200V"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="10 KG Y.YAĞLI YOĞURT (DM)"
-                android:textColor="@color/beyaz"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="center"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/beyaz"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="4 KG Y.YAĞLI YOĞURT (DM)"
-                android:textColor="@color/beyaz"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="center"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/beyaz"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="3 KG Y.YAĞLI YOĞURT (DM)"
-                android:textColor="@color/beyaz"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="center"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/beyaz"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="2 KG Y.YAĞLI YOĞURT(DM)"
-                android:textColor="@color/beyaz"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="center"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/beyaz"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="2750 GR TAVA YOĞURT"
-                android:textColor="@color/beyaz"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="center"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/beyaz"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="9 KG T.YAĞLI YOĞURT"
-                android:textColor="@color/beyaz"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="center"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/beyaz"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="2 KG T.YAĞLI YOĞURT"
-                android:textColor="@color/beyaz"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="center"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/beyaz"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="1250 GR T.YAĞLI YOĞURT"
-                android:textColor="@color/beyaz"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="center"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/beyaz"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="500 GR T.YAĞLI YOĞURT"
-                android:textColor="@color/beyaz"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:gravity="center"
-                android:text="0"
-                android:textAlignment="center"
-                android:textColor="@color/beyaz"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1255,6 +1078,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvYogurt200V"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -1267,9 +1092,262 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tbYogurt10KgDm"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="10 KG Y.YAĞLI YOĞURT (DM)"
+                android:textColor="@color/beyaz"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvYogurt10KgDm"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/beyaz"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbYogurt4KgDm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="4 KG Y.YAĞLI YOĞURT (DM)"
+                android:textColor="@color/beyaz"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvYogurt4KgDm"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/beyaz"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbYogurt3KgDm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="3 KG Y.YAĞLI YOĞURT (DM)"
+                android:textColor="@color/beyaz"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvYogurt3KgDm"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/beyaz"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbYogurt2KgDm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="2 KG Y.YAĞLI YOĞURT(DM)"
+                android:textColor="@color/beyaz"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvYogurt2KgDm"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/beyaz"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbYogurt2750tava"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="2750 GR TAVA YOĞURT"
+                android:textColor="@color/beyaz"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvYogurt2750tava"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/beyaz"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbYogurtTam9Kg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="9 KG T.YAĞLI YOĞURT"
+                android:textColor="@color/beyaz"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvYogurtTam9Kg"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/beyaz"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbYogurtTam2Kg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="2 KG T.YAĞLI YOĞURT"
+                android:textColor="@color/beyaz"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvYogurtTam2Kg"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/beyaz"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbYogurttam1250"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="1250 GR T.YAĞLI YOĞURT"
+                android:textColor="@color/beyaz"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvYogurttam1250"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/beyaz"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbYogurtTam500"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="500 GR T.YAĞLI YOĞURT"
+                android:textColor="@color/beyaz"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvYogurtTam500"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/beyaz"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbYogurtTam200"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -1280,6 +1358,8 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvYogurtTam200"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"

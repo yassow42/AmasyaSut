@@ -169,16 +169,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                                                 view.tvSiparisAdres.text = gelenData!!.siparis_mah + " Mah. " + gelenData!!.siparis_adres + " " + gelenData!!.siparis_apartman
                                                                 view.tvSiparisTel.text = gelenData.siparis_tel
                                                                 view.tvNot.text = gelenData.siparis_notu
-                                                                view.tvCokelek.text = gelenData!!.cokelek
-                                                                view.tvCigSut.text = gelenData!!.cig_sut
+                                                                view.tv5ltSut.text = gelenData!!.zz_5litre
+                                                                view.tv3ltSut.text = gelenData!!.zz_3litre
                                                             } catch (e: Exception) {
                                                                 Log.e("haritalar", e.message.toString())
                                                             }
 
 
-                                                            var sut3ltFiyat = gelenData.cig_sut.toString().toInt()
-                                                            var sut5ltFiyat = gelenData.cokelek.toString().toInt()
-                                                            view.tvFiyat.text = ((sut3ltFiyat * 16) + (sut5ltFiyat * 22)).toString() + " tl"
+                                                            var sut3ltFiyat = gelenData.zz_3litre.toString().toInt()
+                                                            var sut5ltFiyat = gelenData.zz_5litre.toString().toInt()
+                                                            view.tvFiyat.text = ((sut3ltFiyat * 13.5) + (sut5ltFiyat * 22.5)).toString() + " tl"
 
                                                             view.tvSiparisTel.setOnClickListener {
                                                                 val arama = Intent(Intent.ACTION_DIAL)//Bu kod satırımız bizi rehbere telefon numarası ile yönlendiri.
@@ -207,13 +207,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                                                                 gelenData.siparis_notu,
                                                                                 gelenData.siparis_mah,
                                                                                 gelenData.siparis_key,
-                                                                                gelenData.cig_sut,
-                                                                                gelenData.cokelek,
                                                                                 gelenData.siparis_apartman,
                                                                                 gelenData.siparis_tel,
                                                                                 gelenData.musteri_zkonum,
                                                                                 gelenData.musteri_zlat,
-                                                                                gelenData.musteri_zlong
+                                                                                gelenData.musteri_zlong,
+                                                                                gelenData.zz_3litre,
+                                                                                gelenData.zz_3litreFiyat,
+                                                                                gelenData.zz_5litre,
+                                                                                gelenData.zz_5litreFiyat
                                                                             )
 
                                                                             ref.child("Musteriler").child(gelenData.musteri_ad_soyad.toString()).child("siparisleri")

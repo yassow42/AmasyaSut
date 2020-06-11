@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvMusteriAdSoyad" />
 
     <TextView
-        android:id="@+id/tvCigSut"
+        android:id="@+id/tv3ltSut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -45,12 +45,12 @@
         app:layout_constraintTop_toTopOf="@+id/textView14" />
 
     <TextView
-        android:id="@+id/tvCokelek"
+        android:id="@+id/tv5ltSut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="5"
         android:textColor="@color/beyaz"
-        app:layout_constraintEnd_toEndOf="@+id/tvCigSut"
+        app:layout_constraintEnd_toEndOf="@+id/tv3ltSut"
         app:layout_constraintTop_toTopOf="@+id/textView15" />
 
     <TextView
@@ -59,10 +59,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
-        android:text="Çiğ Süt"
+        android:text="3 Litre"
         android:textColor="@color/beyaz"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/tvCigSut"
+        app:layout_constraintEnd_toStartOf="@+id/tv3ltSut"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:text="Çökelek"
+        android:text="5 Litre"
         android:textColor="@color/beyaz"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/textView14"

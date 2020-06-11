@@ -96,14 +96,24 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                 builder.setPositiveButton("Sipariş Ekle", object : DialogInterface.OnClickListener {
                     override fun onClick(dialog: DialogInterface?, which: Int) {
 
-                        var sut3lt = "0"
-                        if (dialogViewSp.etCigSut.text.toString().isNotEmpty()) {
-                            sut3lt = dialogViewSp.etCigSut.text.toString()
-                        }
-                        var sut5lt = "0"
 
-                        if (dialogViewSp.etBp500.text.toString().isNotEmpty()) {
-                            sut5lt = dialogViewSp.etBp500.text.toString()
+                        var sut3lt = "0"
+                        if (dialogViewSp.et3lt.text.toString().isNotEmpty()) {
+                            sut3lt = dialogViewSp.et3lt.text.toString()
+                        }
+                        var sut3ltFiyat = "0"
+                        if (dialogViewSp.et3ltFiyat.text.toString().isNotEmpty()) {
+                            sut3ltFiyat = dialogViewSp.et3ltFiyat.text.toString()
+                        }
+
+                        var sut5lt = "0"
+                        if (dialogViewSp.et5lt.text.toString().isNotEmpty()) {
+                            sut5lt = dialogViewSp.et5lt.text.toString()
+                        }
+
+                        var sut5ltFiyat = "0"
+                        if (dialogViewSp.et5ltFiyat.text.toString().isNotEmpty()) {
+                            sut5ltFiyat = dialogViewSp.et5ltFiyat.text.toString()
                         }
 
 
@@ -113,8 +123,8 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
 
 
                         var siparisData = SiparisData(
-                            musteri_ad_soyad, kullaniciAdi.toString(),   null, null, cal.timeInMillis,item.musteri_adres, siparisNotu,item.musteri_mah,
-                            siparisKey,sut3lt, sut5lt, item.musteri_apartman.toString(),item.musteri_tel)
+                            musteri_ad_soyad, kullaniciAdi.toString(), null, null, cal.timeInMillis, item.musteri_adres, siparisNotu, item.musteri_mah,
+                            siparisKey, item.musteri_apartman.toString(), item.musteri_tel, false, null, null, sut3lt, sut3ltFiyat, sut5lt, sut5ltFiyat)
 
                         ref.child("Siparisler").child(item.musteri_mah.toString()).child(siparisKey).setValue(siparisData)
                         ref.child("Siparisler").child(item.musteri_mah.toString()).child(siparisKey).child("siparis_zamani").setValue(ServerValue.TIMESTAMP)
@@ -141,8 +151,6 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                 popup.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener {
                     when (it.itemId) {
                         R.id.popDüzenle -> {
-
-
                             var builder: AlertDialog.Builder = AlertDialog.Builder(myContext)
 
                             var dialogView: View = inflate(myContext, R.layout.dialog_gidilen_musteri, null)
@@ -175,7 +183,7 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                                     FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteri_ad_soyad).child("musteri_adres").setValue(adres)
                                     FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteri_ad_soyad).child("musteri_apartman").setValue(apartman)
                                     FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteri_ad_soyad).child("musteri_tel").setValue(telefon).addOnCompleteListener {
-///locationsu durduruyrz
+                        ///locationsu durduruyrz
                                         holder.locationManager.removeUpdates(holder.myLocationListener)
                                         dialogMsDznle.dismiss()
                                         Toast.makeText(myContext, "Müşteri Bilgileri Güncellendi", Toast.LENGTH_LONG).show()
@@ -207,19 +215,10 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                                     var list = ArrayList<SiparisData>()
                                     list = ArrayList()
                                     if (p0.child("siparisleri").hasChildren()) {
-
-
-
                                         for (ds in p0.child("siparisleri").children) {
                                             var gelenData = ds.getValue(SiparisData::class.java)!!
                                             list.add(gelenData)
-
-
-
                                         }
-
-
-
 
                                         dialogView.rcSiparisGidilen.layoutManager = LinearLayoutManager(myContext, LinearLayoutManager.VERTICAL, false)
                                         //        dialogView.rcSiparisGidilen.layoutManager = StaggeredGridLayoutManager(myContext, LinearLayoutManager.VERTICAL, 2)
@@ -265,6 +264,7 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
 
                 return@setOnLongClickListener true
             }
+
         } catch (e: Exception) {
             Toast.makeText(myContext, "332. satır hatasıMusteriAdapter", Toast.LENGTH_LONG).show()
         }
@@ -331,6 +331,10 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
         }
 
 
+
+
+
+
         var locationManager = myContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
         @SuppressLint("MissingPermission")
@@ -350,7 +354,6 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                 LocationManager.NETWORK_PROVIDER
             )
         }
-
 
         val myLocationListener = object : LocationListener {
             override fun onLocationChanged(location: Location?) {
@@ -375,8 +378,6 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                 TODO("Not yet implemented")
             }
         }
-
-
 
 
     }

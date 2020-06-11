@@ -146,8 +146,8 @@ class TeslimActivity : AppCompatActivity() {
                             if (calZamandan.timeInMillis < ds.siparis_teslim_zamani!!.toLong() && ds.siparis_teslim_zamani!!.toLong() < calZamana.timeInMillis) {
                                 if (ds.siparisi_giren == "Samet") {
                                     suankiTeslimList.add(ds)
-                                    sut3ltSayisi = ds.cig_sut!!.toInt() + sut3ltSayisi
-                                    sut5ltSayisi = ds.cokelek!!.toInt() + sut5ltSayisi
+                                    sut3ltSayisi = ds.zz_3litre!!.toInt() + sut3ltSayisi
+                                    sut5ltSayisi = ds.zz_5litre!!.toInt() + sut5ltSayisi
 
                                 }
                             }
@@ -166,8 +166,8 @@ class TeslimActivity : AppCompatActivity() {
 
                                 if (ds.siparisi_giren == "Umit") {
                                     suankiTeslimList.add(ds)
-                                    sut3ltSayisi = ds.cig_sut!!.toInt() + sut3ltSayisi
-                                    sut5ltSayisi = ds.cokelek!!.toInt() + sut5ltSayisi
+                                    sut3ltSayisi = ds.zz_3litre!!.toInt() + sut3ltSayisi
+                                    sut5ltSayisi = ds.zz_5litre!!.toInt() + sut5ltSayisi
 
                                 }
 
@@ -188,8 +188,8 @@ class TeslimActivity : AppCompatActivity() {
 
                                 if (ds.siparisi_giren == "Nihat") {
                                     suankiTeslimList.add(ds)
-                                    sut3ltSayisi = ds.cig_sut!!.toInt() + sut3ltSayisi
-                                    sut5ltSayisi = ds.cokelek!!.toInt() + sut5ltSayisi
+                                    sut3ltSayisi = ds.zz_3litre!!.toInt() + sut3ltSayisi
+                                    sut5ltSayisi = ds.zz_5litre!!.toInt() + sut5ltSayisi
 
                                 }
 
@@ -241,8 +241,8 @@ class TeslimActivity : AppCompatActivity() {
                                 butunTeslimList.add(gelenData)
                                 if (gece3GelenZaman - 86400000 < gelenData.siparis_teslim_zamani!!.toLong() && gelenData.siparis_teslim_zamani!!.toLong() < gece3GelenZaman) {
                                     suankiTeslimList.add(gelenData)
-                                    sut3ltSayisi = gelenData.cig_sut!!.toInt() + sut3ltSayisi
-                                    sut5ltSayisi = gelenData.cokelek!!.toInt() + sut5ltSayisi
+                                    sut3ltSayisi = gelenData.zz_3litre!!.toInt() + sut3ltSayisi
+                                    sut5ltSayisi = gelenData.zz_5litre!!.toInt() + sut5ltSayisi
 
                                 }
                             }

@@ -80,7 +80,6 @@ class SiparislerActivity : AppCompatActivity() {
         progressDialog.setCancelable(true)
         progressDialog.show()
 
-
         //   hndler.postDelayed(Runnable { setupVeri() }, 750)
         hndler.postDelayed(Runnable { progressDialog.dismiss() }, 1000)
 
@@ -89,6 +88,12 @@ class SiparislerActivity : AppCompatActivity() {
     }
 
     private fun veri() {
+
+        imgSighOut.setOnClickListener {
+            mAuth.signOut()
+            val intent = Intent(this,LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         ref.child("Siparisler").addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {}

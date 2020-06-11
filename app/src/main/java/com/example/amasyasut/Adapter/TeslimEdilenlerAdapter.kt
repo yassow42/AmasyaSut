@@ -83,15 +83,17 @@ class TeslimEdilenlerAdapter(val myContext: Context, val siparisler: ArrayList<S
 
         val musteriAdSoyad = itemView.tvMusteriAdSoyad
         val teslimEden = itemView.tvSiparisGiren
-        val sut3lt = itemView.tvCigSut
-        val sut5lt = itemView.tvCokelek
+        val sut3lt = itemView.tv3ltSut
+        val sut5lt = itemView.tv5ltSut
         val zaman = itemView.tvZaman
 
 
         fun setData(siparisData: SiparisData) {
             musteriAdSoyad.text = siparisData.musteri_ad_soyad
-            sut3lt.text = siparisData.cig_sut
-            sut5lt.text = siparisData.cokelek
+            sut3lt.text = siparisData.zz_3litre
+            sut5lt.text = siparisData.zz_5litre
+
+
             zaman.text = TimeAgo.getTimeAgo(siparisData.siparis_teslim_zamani.toString().toLong())
             if (!siparisData.siparisi_giren.isNullOrEmpty()) {
                 teslimEden.text = siparisData.siparisi_giren.toString()

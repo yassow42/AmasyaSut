@@ -31,11 +31,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Çiğ Süt"
+                        android:text="3 Lt Süt"
                         android:textColor="@color/siyah" />
 
                     <EditText
-                        android:id="@+id/etCigSut"
+                        android:id="@+id/et3lt"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
 
@@ -49,8 +49,59 @@
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
 
+                    <EditText
+                        android:id="@+id/et3ltFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:background="@drawable/bg_edittext"
+
+                        android:ems="10"
+                        android:inputType="number"
+                        android:text="13.5"
+
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
                 </TableRow>
 
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5 Lt Süt"
+                        android:textColor="@color/siyah" />
+
+                    <EditText
+                        android:id="@+id/et5lt"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/et5ltFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:text="22.5"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+                </TableRow>
 
 
             </TableLayout>
@@ -135,6 +186,21 @@
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etBp500Fiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
+                        android:text="11,4000"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
                 </TableRow>
 
                 <TableRow
@@ -153,7 +219,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etBp800"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -161,6 +227,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etBp800Fiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -182,7 +261,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etBp5kg"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -190,6 +269,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etBp5kgFiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -211,7 +303,7 @@
                         android:textSize="12sp" />
 
                     <EditText
-
+                        android:id="@+id/etBp17kg"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -219,6 +311,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etBp17kgFiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -240,7 +345,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etKasar400"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -248,6 +353,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etKasar400Fiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -269,7 +387,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etKasar700"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -277,6 +395,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etKasar700Fiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -298,7 +429,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etKasar1kg"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -306,6 +437,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etKasar1kgFiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -327,7 +471,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etKasar2kgPide"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -335,6 +479,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etKasar2kgPideFiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -356,7 +513,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etKasar2kgTost"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -364,6 +521,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etKasar2kgTostFiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -385,7 +555,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etKoy5kg"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -393,6 +563,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etKoy5kgFiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -414,7 +597,7 @@
                         android:textSize="12sp" />
 
                     <EditText
-
+                        android:id="@+id/etKoy15kg"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -422,6 +605,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etKoy15kgFiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -443,7 +639,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etTulum250"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -451,6 +647,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etTulum250Fiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -472,7 +681,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etCerkez"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -480,6 +689,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etCerkezFiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -501,7 +723,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/et9kgLor"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -509,6 +731,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/et9kgLorFiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -530,7 +765,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etCokelek"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -538,6 +773,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etCokelekFiyat"
+                        android:layout_width="65dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -612,7 +860,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt200"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -620,6 +868,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt200Fiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -641,7 +902,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt200V"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -649,6 +910,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt200VFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -670,7 +944,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt500"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -678,6 +952,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt500Fiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -699,7 +986,7 @@
                         android:textSize="12sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt1250"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -707,6 +994,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt1250Fiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -728,7 +1028,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt2Kg"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -736,6 +1036,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt2KgFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -757,7 +1070,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt9Kg"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -765,6 +1078,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt9KgFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -786,7 +1112,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt2750KgTava"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -794,6 +1120,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt2750KgTavaFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -815,7 +1154,7 @@
                         android:textSize="12sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt2KgDM"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -823,6 +1162,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt2KgDMFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -844,7 +1196,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt3KgDM"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -852,6 +1204,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt3KgDMFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -873,7 +1238,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt4KgDM"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -881,6 +1246,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt4KgDMFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -902,7 +1280,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt10KgDM"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -910,6 +1288,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt10KgDMFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -931,7 +1322,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt10KgV"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -939,6 +1330,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt10KgVFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -960,7 +1364,7 @@
                         android:textSize="12sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt10Ozel"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -968,6 +1372,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt10OzelFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -989,7 +1406,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt900Suzme"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -997,6 +1414,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt900SuzmeFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1018,7 +1448,7 @@
                         android:textSize="12sp" />
 
                     <EditText
-
+                        android:id="@+id/etYogurt5KgSuzme"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1026,6 +1456,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etYogurt5KgSuzmeFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1054,7 +1497,6 @@
 
                 <ImageView
                     android:id="@+id/yukariDiger"
-
                     android:layout_width="27dp"
                     android:layout_height="27dp"
                     android:background="@drawable/yukariok"
@@ -1102,7 +1544,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etAyran1Lt"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1110,6 +1552,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etAyran1LtFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1131,7 +1586,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etAyran290YY"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1139,6 +1594,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etAyran290YYFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1160,7 +1628,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etAyran220YY"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1168,6 +1636,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etAyran220YYFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1189,7 +1670,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etAyran200YY"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1197,6 +1678,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etAyran200YYFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1218,7 +1712,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etAyran180YY"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1226,6 +1720,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etAyran180YYFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1247,7 +1754,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etAyran170YY"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1255,6 +1762,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etAyran170YYFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1276,7 +1796,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etAyran150YY"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1284,6 +1804,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etAyran150YYFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1305,7 +1838,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etTereyag500"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1313,6 +1846,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etTereyag500Fiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1334,7 +1880,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etTereyag1Kg"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1342,6 +1888,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etTereyag1KgFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1363,7 +1922,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etTereyag1Kgkoy"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1371,6 +1930,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etTereyag1KgkoyFiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1392,7 +1964,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etTereyag1800"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1400,6 +1972,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etTereyag1800Fiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1421,7 +2006,7 @@
                         android:textSize="13sp" />
 
                     <EditText
-
+                        android:id="@+id/etKaymak200"
                         android:layout_width="65dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="4dp"
@@ -1429,6 +2014,19 @@
                         android:background="@drawable/bg_edittext"
                         android:ems="10"
                         android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textColorHint="#ffffff" />
+
+                    <EditText
+                        android:id="@+id/etKaymak200Fiyat"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/bg_edittext"
+                        android:ems="10"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textColorHint="#ffffff" />
@@ -1449,6 +2047,7 @@
                 android:textStyle="bold" />
 
             <EditText
+
                 android:id="@+id/etSiparisNotu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

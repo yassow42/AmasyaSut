@@ -267,30 +267,44 @@ class MusterilerActivity : AppCompatActivity() {
                             })
                             builder.setPositiveButton("Sipariş Ekle", object : DialogInterface.OnClickListener {
                                 override fun onClick(dialog: DialogInterface?, which: Int) {
-
+                                    dialogViewSpArama.tbYogurtlar.visibility = View.GONE
+                                    dialogViewSpArama.tbDigerleri.visibility = View.GONE
+                                    dialogViewSpArama.tbPeynirler.visibility = View.GONE
                                     var sut3lt = "0"
-                                    if (dialogViewSpArama.etCigSut.text.toString().isNotEmpty()) {
-                                        sut3lt = dialogViewSpArama.etCigSut.text.toString()
+                                    if (dialogViewSpArama.et3lt.text.toString().isNotEmpty()) {
+                                        sut3lt = dialogViewSpArama.et3lt.text.toString()
                                     }
+                                    var sut3ltFiyat = "0"
+                                    if (dialogViewSpArama.et3ltFiyat.text.toString().isNotEmpty()) {
+                                        sut3ltFiyat = dialogViewSpArama.et3ltFiyat.text.toString()
+                                    }
+
                                     var sut5lt = "0"
-                                    if (dialogViewSpArama.etBp500.text.toString().isNotEmpty()) {
-                                        sut5lt = dialogViewSpArama.etBp500.text.toString()
+                                    if (dialogViewSpArama.et5lt.text.toString().isNotEmpty()) {
+                                        sut5lt = dialogViewSpArama.et5lt.text.toString()
+                                    }
+
+                                    var sut5ltFiyat = "0"
+                                    if (dialogViewSpArama.et5ltFiyat.text.toString().isNotEmpty()) {
+                                        sut5ltFiyat = dialogViewSpArama.et5ltFiyat.text.toString()
                                     }
 
 
                                     var siparisNotu = dialogViewSpArama.etSiparisNotu.text.toString()
-                                    var siparisKey = FirebaseDatabase.getInstance().reference.child("Siparisler").push().key.toString()
-                                    var siparisData = SiparisData(musteriData.musteri_ad_soyad.toString(), kullaniciAdi.toString(), null, null, cal.timeInMillis, musteriData.musteri_adres, siparisNotu, musteriData.musteri_mah, siparisKey, sut3lt, sut5lt, musteriData.musteri_apartman.toString(), musteriData.musteri_tel)
+                                    var siparisKey = ref.child("Siparisler").push().key.toString()
+                                    var siparisData = SiparisData(
+                                        musteriData.musteri_ad_soyad.toString(), kullaniciAdi.toString(), null, null, cal.timeInMillis, musteriData.musteri_adres,
+                                        siparisNotu, musteriData.musteri_mah, siparisKey, musteriData.musteri_apartman.toString(), musteriData.musteri_tel.toString(),
+                                        false, null, null, sut3lt, sut3ltFiyat, sut5lt, sut5ltFiyat
+                                    )
 
-                                    FirebaseDatabase.getInstance().reference.child("Siparisler").child(siparisKey).setValue(siparisData)
-                                    FirebaseDatabase.getInstance().reference.child("Siparisler").child(siparisKey).child("siparis_zamani").setValue(ServerValue.TIMESTAMP)
-                                    FirebaseDatabase.getInstance().reference.child("Siparisler").child(siparisKey).child("siparis_teslim_zamani").setValue(ServerValue.TIMESTAMP)
-                                    FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteriData.musteri_ad_soyad.toString()).child("siparisleri").child(siparisKey)
-                                        .setValue(siparisData)
-                                    FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteriData.musteri_ad_soyad.toString()).child("siparisleri").child(siparisKey)
-                                        .child("siparis_teslim_zamani").setValue(ServerValue.TIMESTAMP)
-                                    FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteriData.musteri_ad_soyad.toString()).child("siparisleri").child(siparisKey)
-                                        .child("siparis_zamani").setValue(ServerValue.TIMESTAMP)
+                                    ref.child("Siparisler").child(musteriData.musteri_mah.toString()).child(siparisKey).setValue(siparisData)
+                                    ref.child("Siparisler").child(musteriData.musteri_mah.toString()).child(siparisKey).child("siparis_zamani").setValue(ServerValue.TIMESTAMP)
+                                    ref.child("Siparisler").child(musteriData.musteri_mah.toString()).child(siparisKey).child("siparis_teslim_zamani").setValue(ServerValue.TIMESTAMP)
+
+                                    ref.child("Musteriler").child(musteriData.musteri_ad_soyad.toString()).child("siparisleri").child(siparisKey).setValue(siparisData)
+                                    ref.child("Musteriler").child(musteriData.musteri_ad_soyad.toString()).child("siparisleri").child(siparisKey).child("siparis_teslim_zamani").setValue(ServerValue.TIMESTAMP)
+                                    ref.child("Musteriler").child(musteriData.musteri_ad_soyad.toString()).child("siparisleri").child(siparisKey).child("siparis_zamani").setValue(ServerValue.TIMESTAMP)
 
 
                                 }
