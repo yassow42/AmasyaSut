@@ -8,7 +8,6 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +20,7 @@ import com.example.amasyasut.R
 import com.example.amasyasut.TimeAgo
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.dialog_siparis_ekle.view.*
 import kotlinx.android.synthetic.main.item_siparisler.view.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -159,27 +159,37 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
                             override fun onClick(dialog: DialogInterface?, which: Int) {
 
                                 var sut3lt = "0"
-                                if (viewDuzenle.et3lt.text.isNotEmpty()) {
+                                if (viewDuzenle.et3lt.text.toString().isNotEmpty()) {
                                     sut3lt = viewDuzenle.et3lt.text.toString()
                                 }
-                                var sut5lt = "0"
-                                if (viewDuzenle.etBp500.text.isNotEmpty()) {
-                                    sut5lt = viewDuzenle.etBp500.text.toString()
+                                var sut3ltFiyat = "0"
+                                if (viewDuzenle.et3ltFiyat.text.toString().isNotEmpty()) {
+                                    sut3ltFiyat = viewDuzenle.et3ltFiyat.text.toString()
                                 }
+
+                                var sut5lt = "0"
+                                if (viewDuzenle.et5lt.text.toString().isNotEmpty()) {
+                                    sut5lt = viewDuzenle.et5lt.text.toString()
+                                }
+
+                                var sut5ltFiyat = "0"
+                                if (viewDuzenle.et5ltFiyat.text.toString().isNotEmpty()) {
+                                    sut5ltFiyat = viewDuzenle.et5ltFiyat.text.toString()
+                                }
+
 
 
                                 var ref = FirebaseDatabase.getInstance().reference
                                 var not = viewDuzenle.etSiparisNotu.text.toString()
                                 var siparisKey = siparisler[position].siparis_key.toString()
                                 var siparisVeren = siparisler[position].musteri_ad_soyad.toString()
-                                ref.child("Siparisler").child(item.siparis_mah.toString()).child(siparisKey).child("sut3lt").setValue(sut3lt)
-                                ref.child("Siparisler").child(item.siparis_mah.toString()).child(siparisKey).child("sut5lt").setValue(sut5lt)
-                                ref.child("Siparisler").child(item.siparis_mah.toString()).child(siparisKey).child("siparis_notu").setValue(not)
-                                ref.child("Siparisler").child(item.siparis_mah.toString()).child(siparisKey).child("siparis_teslim_tarihi").setValue(cal.timeInMillis)
 
-                                ref.child("Musteriler").child(siparisVeren).child("siparisleri").child(siparisKey).child("sut3lt").setValue(sut3lt)
-                                ref.child("Musteriler").child(siparisVeren).child("siparisleri").child(siparisKey).child("sut5lt").setValue(sut5lt)
-                                ref.child("Musteriler").child(siparisVeren).child("siparisleri").child(siparisKey).child("siparis_notu").setValue(not)
+                                val siparisDataGuncelle = SiparisData(item.musteri_ad_soyad,item.siparisi_giren,item.siparis_zamani,item.siparis_teslim_zamani,cal.timeInMillis,item.siparis_adres,not,
+                                item.siparis_mah,item.siparis_key,item.siparis_apartman,item.siparis_tel,item.musteri_zkonum,item.musteri_zlat,item.musteri_zlong,sut3lt,sut3ltFiyat,sut5lt,sut5ltFiyat)
+                                ref.child("Siparisler").child(item.siparis_mah.toString()).child(siparisKey).setValue(siparisDataGuncelle)
+
+                                ref.child("Musteriler").child(siparisVeren).child("siparisleri").child(siparisKey).setValue(siparisDataGuncelle)
+
                                 var intent = Intent(myContext, SiparislerActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                                 myContext.startActivity(intent)
                             }
@@ -411,32 +421,27 @@ class MahalleSiparisleriAdapter(val myContext: Context, val siparisler: ArrayLis
                 tb3lt.visibility = View.VISIBLE
             }
             if (siparisData.zz_5litre.toString() == "0") {
-                tb3lt.visibility = View.GONE
+                tb5lt.visibility = View.GONE
             }else {
                 tv5ltSut.text = siparisData.zz_5litre.toString()
                 tb5lt.visibility = View.VISIBLE
             }
-/*
-            siparisData.zz_3litre.toString()?.let {
-                tv3lt.text = it
 
-            }
-            siparisData.zz_5litre.toString()?.let {
-                tv5lt.text = it
-                tb5lt.visibility = View.VISIBLE
 
-            }*/
+
+
+
         }
 
         fun fiyatHesaplama(siparisData: SiparisData) {
-            /*
+
             var sut3ltAdet = siparisData.zz_3litre.toString().toInt()
             var sut3ltFiyat = siparisData.zz_3litreFiyat.toString().toDouble()
             var sut5ltAdet = siparisData.zz_5litre.toString().toInt()
             var sut5ltFiyat = siparisData.zz_5litreFiyat.toString().toDouble()
 
             tvFiyat.text = ((sut3ltAdet * sut3ltFiyat) + (sut5ltAdet * sut5ltFiyat)).toString() + " TL"
-            Log.e("sad", ((sut3ltAdet * sut3ltFiyat) + (sut5ltAdet * sut5ltFiyat)).toString())*/
+          //  Log.e("sad", ((sut3ltAdet * sut3ltFiyat) + (sut5ltAdet * sut5ltFiyat)).toString())
         }
 
         fun telAdres(siparisData: SiparisData) {

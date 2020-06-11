@@ -96,7 +96,6 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                 builder.setPositiveButton("Sipariş Ekle", object : DialogInterface.OnClickListener {
                     override fun onClick(dialog: DialogInterface?, which: Int) {
 
-
                         var sut3lt = "0"
                         if (dialogViewSp.et3lt.text.toString().isNotEmpty()) {
                             sut3lt = dialogViewSp.et3lt.text.toString()
@@ -116,6 +115,25 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                             sut5ltFiyat = dialogViewSp.et5ltFiyat.text.toString()
                         }
 
+                        var bp500 = "0"
+                        if (dialogViewSp.etBp500.text.toString().isNotEmpty()) {
+                            bp500 = dialogViewSp.etBp500.text.toString()
+                        }
+
+                        var bp500Fiyat = "0"
+                        if (dialogViewSp.etBp500Fiyat.text.toString().isNotEmpty()) {
+                            bp500Fiyat = dialogViewSp.etBp500Fiyat.text.toString()
+                        }
+                        var bp800 = "0"
+                        if (dialogViewSp.etBp800.text.toString().isNotEmpty()) {
+                            bp800 = dialogViewSp.etBp800.text.toString()
+                        }
+
+                        var bp800Fiyat = "0"
+                        if (dialogViewSp.etBp800Fiyat.text.toString().isNotEmpty()) {
+                            bp800Fiyat = dialogViewSp.etBp800Fiyat.text.toString()
+                        }
+
 
                         var siparisNotu = dialogViewSp.etSiparisNotu.text.toString()
 
@@ -124,7 +142,12 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
 
                         var siparisData = SiparisData(
                             musteri_ad_soyad, kullaniciAdi.toString(), null, null, cal.timeInMillis, item.musteri_adres, siparisNotu, item.musteri_mah,
-                            siparisKey, item.musteri_apartman.toString(), item.musteri_tel, false, null, null, sut3lt, sut3ltFiyat, sut5lt, sut5ltFiyat)
+                            siparisKey, item.musteri_apartman.toString(), item.musteri_tel, false, null, null,
+                            sut3lt, sut3ltFiyat,
+                            sut5lt, sut5ltFiyat,
+                            bp500, bp500Fiyat,
+                            bp800, bp800Fiyat
+                        )
 
                         ref.child("Siparisler").child(item.musteri_mah.toString()).child(siparisKey).setValue(siparisData)
                         ref.child("Siparisler").child(item.musteri_mah.toString()).child(siparisKey).child("siparis_zamani").setValue(ServerValue.TIMESTAMP)
@@ -183,7 +206,7 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                                     FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteri_ad_soyad).child("musteri_adres").setValue(adres)
                                     FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteri_ad_soyad).child("musteri_apartman").setValue(apartman)
                                     FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteri_ad_soyad).child("musteri_tel").setValue(telefon).addOnCompleteListener {
-                        ///locationsu durduruyrz
+                                        ///locationsu durduruyrz
                                         holder.locationManager.removeUpdates(holder.myLocationListener)
                                         dialogMsDznle.dismiss()
                                         Toast.makeText(myContext, "Müşteri Bilgileri Güncellendi", Toast.LENGTH_LONG).show()
@@ -328,11 +351,8 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
             musteriAdiGnl = musteriData.musteri_ad_soyad.toString()
             musteriAdi.text = musteriData.musteri_ad_soyad
             sonSiparisZamani.text = TimeAgo.getTimeAgo(musteriData.siparis_son_zaman!!).toString()
+
         }
-
-
-
-
 
 
         var locationManager = myContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager
