@@ -16,6 +16,7 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.dialog_gidilen_musteri.view.*
 import kotlinx.android.synthetic.main.item_siparisler_mahalle.view.*
 import kotlinx.android.synthetic.main.item_siparisler_mahalle.view.tvMahalle
+import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -76,8 +77,13 @@ class MahalleAdapter(val myContext: Context, val mahalleler: ArrayList<String>,v
                         var siparisList = ArrayList<SiparisData>()
                         if (p0.hasChildren()) {
                             for (ds in p0.children) {
-                                var gelenData = ds.getValue(SiparisData::class.java)!!
-                                siparisList.add(gelenData)
+                                try {
+                                    var gelenData = ds.getValue(SiparisData::class.java)!!
+                                    siparisList.add(gelenData)
+                                }catch (e:Exception){
+                                    FirebaseDatabase.getInstance().reference.child("Hatalar/MahalleAdapter").push().setValue(e.message.toString())
+                                }
+
                             }
                             recycler.layoutManager = LinearLayoutManager(myContext, LinearLayoutManager.VERTICAL, false)
                             val adapter = MahalleSiparisleriAdapter(myContext, siparisList,kullaniciAdi)

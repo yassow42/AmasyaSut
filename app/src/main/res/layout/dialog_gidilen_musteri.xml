@@ -223,4 +223,14 @@
         app:layout_constraintStart_toEndOf="@+id/etTelefonGidilen"
         app:layout_constraintTop_toTopOf="@+id/etTelefonGidilen" />
 
+    <ImageView
+        android:id="@+id/imgMaps"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/swKonumKaydet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/swKonumKaydet"
+        app:layout_constraintTop_toTopOf="@+id/swKonumKaydet"
+        app:srcCompat="@drawable/map" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

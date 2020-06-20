@@ -79,6 +79,8 @@ class SiparisData(
     var zz_YogurtSuzme900Fiyat: String? = null,
     var zz_YogurtSuzme5Kg: String? = null,
     var zz_YogurtSuzme5KgFiyat: String? = null,
+    var zz_Yogurt2750KgTava: String? = null,
+    var zz_Yogurt2750KgTavaFiyat: String? = null,
 
 
     var zz_Ayran1Lt: String? = null,

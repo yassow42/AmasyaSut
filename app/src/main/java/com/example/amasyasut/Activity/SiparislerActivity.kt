@@ -1,9 +1,13 @@
 package com.example.amasyasut.Activity
 
+import android.app.AlertDialog
+import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,6 +15,7 @@ import com.example.amasyasut.Adapter.MahalleAdapter
 import com.example.amasyasut.BottomNavigationViewHelper
 
 import com.example.amasyasut.Datalar.SiparisData
+import com.example.amasyasut.LoadingDialog
 import com.example.amasyasut.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -58,9 +63,12 @@ class SiparislerActivity : AppCompatActivity() {
     lateinit var userID: String
     lateinit var kullaniciAdi: String
     private val ACTIVITY_NO = 0
-    lateinit var progressDialog: ProgressDialog
+
+    // lateinit var progressDialog: ProgressDialog
     var hndler = Handler()
     var ref = FirebaseDatabase.getInstance().reference
+
+    var loading: Dialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,25 +81,47 @@ class SiparislerActivity : AppCompatActivity() {
         userID = mAuth.currentUser!!.uid
         setupKullaniciAdi()
         setupNavigationView()
-     //   setupBtn()
+        //   setupBtn()
         zamanAyarı()
+        /*
         progressDialog = ProgressDialog(this)
         progressDialog.setMessage("Yükleniyor...")
         progressDialog.setCancelable(true)
         progressDialog.show()
+*/
+        dialogCalistir()
+        hndler.postDelayed(Runnable { veri() }, 750)
+        hndler.postDelayed(Runnable { dialogGizle() }, 1000)
 
-        //   hndler.postDelayed(Runnable { setupVeri() }, 750)
-        hndler.postDelayed(Runnable { progressDialog.dismiss() }, 1000)
-
-        veri()
 
     }
 
+    fun dialogGizle() {
+        loading?.let { if (it.isShowing) it.cancel() }
+
+    }
+
+    fun dialogCalistir() {
+        dialogGizle()
+        loading = LoadingDialog.startDialog(this)
+    }
+
     private fun veri() {
+        tvFiyatListesi.setOnClickListener {
+            var builder: androidx.appcompat.app.AlertDialog.Builder = androidx.appcompat.app.AlertDialog.Builder(this)
+            var inflater: LayoutInflater = layoutInflater
+            val view = inflater.inflate(R.layout.dialog_fiyat_listesi, null)
+
+            builder.setView(view)
+            builder.setTitle("Fiyat Listesi")
+
+            var dialog: Dialog = builder.create()
+            dialog.show()
+        }
 
         imgSighOut.setOnClickListener {
             mAuth.signOut()
-            val intent = Intent(this,LoginActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
@@ -105,13 +135,13 @@ class SiparislerActivity : AppCompatActivity() {
                         try {
                             mahalleList.add(ds.key.toString())
                         } catch (e: Exception) {
+                            Log.e("hata", "siparişler activity ${e.message.toString()}")
                         }
 
                     }
-
-                    val adapter = MahalleAdapter(this@SiparislerActivity, mahalleList,kullaniciAdi)
-                    rcMahalleler.layoutManager =
-                        LinearLayoutManager(this@SiparislerActivity, LinearLayoutManager.VERTICAL, false)
+                    dialogGizle()
+                    val adapter = MahalleAdapter(this@SiparislerActivity, mahalleList, kullaniciAdi)
+                    rcMahalleler.layoutManager = LinearLayoutManager(this@SiparislerActivity, LinearLayoutManager.VERTICAL, false)
                     rcMahalleler.adapter = adapter
                 }
             }

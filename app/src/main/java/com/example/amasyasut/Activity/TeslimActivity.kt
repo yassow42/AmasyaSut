@@ -130,6 +130,7 @@ class TeslimActivity : AppCompatActivity() {
 
             }
         }
+        /*
         imgOptions.setOnClickListener {
 
             val popup = PopupMenu(this, imgOptions)
@@ -209,7 +210,7 @@ class TeslimActivity : AppCompatActivity() {
             popup.show()
 
         }
-
+*/
     }
 
     private fun setupVeri() {
