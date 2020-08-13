@@ -14,8 +14,8 @@ object LoadingDialog {
             it.show()
             // it.window?.setBackgroundDrawableResource(R.color.siyah)
             it.setContentView(R.layout.proggres_dialog)
-            it.setCancelable(true)
-            it.setCanceledOnTouchOutside(true)
+            it.setCancelable(false)
+            it.setCanceledOnTouchOutside(false)
             return it
         }
     }

@@ -26,6 +26,7 @@ import com.example.amasyasut.Datalar.MusteriData
 import com.example.amasyasut.Datalar.SiparisData
 import com.example.amasyasut.R
 import com.example.amasyasut.TimeAgo
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.dialog_gidilen_musteri.view.*
 import kotlinx.android.synthetic.main.dialog_siparis_ekle.view.*
@@ -41,11 +42,29 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
     lateinit var dialogViewSp: View
     lateinit var dialogMsDznle: Dialog
 
+    lateinit var mAuth: FirebaseAuth
+    lateinit var userID: String
+    lateinit var saticiYetki: String
 
-    var genelFiyat = 0
     var ref = FirebaseDatabase.getInstance().reference
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusteriAdapter.MusteriHolder {
         val myView = LayoutInflater.from(myContext).inflate(R.layout.item_musteri, parent, false)
+
+        mAuth = FirebaseAuth.getInstance()
+        userID = mAuth.currentUser!!.uid
+        //    mAuth.signOut()
+
+        ref.child("users").child(userID).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                saticiYetki = p0.child("yetki").value.toString()
+            }
+
+        })
+
+
 
         return MusteriHolder(myView)
     }
@@ -55,6 +74,8 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
     }
 
     override fun onBindViewHolder(holder: MusteriAdapter.MusteriHolder, position: Int) {
+
+
         var item = musteriler[position]
         var musteri_ad_soyad = musteriler[position].musteri_ad_soyad.toString()
         try {
@@ -566,9 +587,9 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                             siparisKey,
                             item.musteri_apartman.toString(),
                             item.musteri_tel,
-                            false,
-                            null,
-                            null,
+                            item.musteri_zkonum,
+                            item.musteri_zlat,
+                            item.musteri_zlong,
                             sut3lt,
                             sut3ltFiyat,
                             sut5lt,
@@ -692,7 +713,7 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
 
                             dialogView.imgMaps.setOnClickListener {
                                 val intent = Intent(myContext, AdresBulmaMapsActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-                                intent.putExtra("musteriAdi",musteriler[position].musteri_ad_soyad)
+                                intent.putExtra("musteriAdi", musteriler[position].musteri_ad_soyad)
                                 myContext.startActivity(intent)
                             }
 
@@ -723,7 +744,7 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
                                     FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteri_ad_soyad).child("musteri_apartman").setValue(apartman)
                                     FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteri_ad_soyad).child("musteri_tel").setValue(telefon).addOnCompleteListener {
                                         ///locationsu durduruyrz
-                                        //    holder.locationManager.removeUpdates(holder.myLocationListener)
+                                        ///holder.locationManager.removeUpdates(holder.myLocationListener)
                                         dialogMsDznle.dismiss()
                                         Toast.makeText(myContext, "Müşteri Bilgileri Güncellendi", Toast.LENGTH_LONG).show()
                                     }.addOnFailureListener { Toast.makeText(myContext, "Müşteri Bilgileri Güncellenemedi", Toast.LENGTH_LONG).show() }
@@ -776,23 +797,28 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
 
                         }
                         R.id.popSil -> {
+                            if (saticiYetki == "Yönetici") {
+                                var alert = AlertDialog.Builder(myContext)
+                                    .setTitle("Müşteriyi Sil")
+                                    .setMessage("Emin Misin ?")
+                                    .setPositiveButton("Sil", object : DialogInterface.OnClickListener {
+                                        override fun onClick(p0: DialogInterface?, p1: Int) {
+                                            FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteriler[position].musteri_ad_soyad.toString()).removeValue()
 
-                            var alert = AlertDialog.Builder(myContext)
-                                .setTitle("Müşteriyi Sil")
-                                .setMessage("Emin Misin ?")
-                                .setPositiveButton("Sil", object : DialogInterface.OnClickListener {
-                                    override fun onClick(p0: DialogInterface?, p1: Int) {
-                                        FirebaseDatabase.getInstance().reference.child("Musteriler").child(musteriler[position].musteri_ad_soyad.toString()).removeValue()
+                                        }
+                                    })
+                                    .setNegativeButton("İptal", object : DialogInterface.OnClickListener {
+                                        override fun onClick(p0: DialogInterface?, p1: Int) {
+                                            p0!!.dismiss()
+                                        }
+                                    }).create()
 
-                                    }
-                                })
-                                .setNegativeButton("İptal", object : DialogInterface.OnClickListener {
-                                    override fun onClick(p0: DialogInterface?, p1: Int) {
-                                        p0!!.dismiss()
-                                    }
-                                }).create()
+                                alert.show()
+                            } else {
+                                Toast.makeText(myContext, "Yöneticinize başvurun...", Toast.LENGTH_SHORT).show()
+                                ref.child("Silmeler").child("Musteri").push().setValue(userID)
 
-                            alert.show()
+                            }
 
 
                         }
@@ -805,7 +831,7 @@ class MusteriAdapter(val myContext: Context, val musteriler: ArrayList<MusteriDa
             }
 
         } catch (e: Exception) {
-            Toast.makeText(myContext, "332. satır hatasıMusteriAdapter", Toast.LENGTH_LONG).show()
+            Toast.makeText(myContext, "satır hatasıMusteriAdapter", Toast.LENGTH_LONG).show()
         }
 
 

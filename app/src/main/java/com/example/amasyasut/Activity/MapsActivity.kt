@@ -145,27 +145,31 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         userID = mAuth.currentUser!!.uid
 
         setupNavigationView()
-        setupKullaniciAdi()
-        konumIzni()
+
+
 
 
         val sharedPreferences = getPreferences(Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         konum = sharedPreferences.getBoolean("Konum", false)
         swKonum.isChecked = konum
-        Toast.makeText(this, "Bazı Siparişler Adres Bulunamadığından gösterilmeyebilir. Dikkatli Ol.!!!", Toast.LENGTH_LONG).show()
+      //  Toast.makeText(this, "Bazı Siparişler Adres Bulunamadığından gösterilmeyebilir. Dikkatli Ol.!!!", Toast.LENGTH_LONG).show()
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        mMap.isMyLocationEnabled = konum
+
+        mMap.isMyLocationEnabled = false
+        handler.postDelayed(Runnable { mMap.isMyLocationEnabled = konum }, 2000)
+
         // Add a marker in Sydney and move the camera
         val amasya = LatLng(40.6565, 35.8373)
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(amasya, 12.7f))
 
         dialogCalistir()
-        handler.postDelayed(Runnable { veri() }, 750)
-        handler.postDelayed(Runnable { dialogGizle() }, 1000)
+        setupKullaniciAdi()
+        konumIzni()
+        handler.postDelayed(Runnable { dialogGizle() }, 2000)
 
 
     }
@@ -212,11 +216,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                                     var lat = gelenData.musteri_zlat!!.toDouble()
                                                     var long = gelenData.musteri_zlong!!.toDouble()
                                                     val adres = LatLng(lat, long)
-                                                    var myMarker =
-                                                        mMap.addMarker(MarkerOptions().position(adres).title(gelenData.musteri_ad_soyad).snippet(gelenData.siparis_adres + " / " + gelenData.siparis_apartman))
+                                                    var myMarker = mMap.addMarker(MarkerOptions().position(adres).title(gelenData.musteri_ad_soyad))
 
                                                     myMarker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.order_map))
                                                     myMarker.tag = gelenData.siparis_key
+                                                    val mahalle = gelenData.siparis_mah.toString()
+                                                    myMarker.snippet = mahalle
                                                     dialogGizle()
                                                 } catch (e: Exception) {
                                                     Toast.makeText(this@MapsActivity, gelenData.musteri_ad_soyad + " adlı müşterinin konumu hatalı. Lütfen Müşterinin ev konum switch'ini kapatın", Toast.LENGTH_LONG).show()
@@ -227,17 +232,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                                 var lat = convertAddressLat(gelenData.siparis_mah + " mahallesi " + gelenData.siparis_adres + " Amasya 05000")!!.toDouble()
                                                 var long = convertAddressLng(gelenData.siparis_mah + " mahallesi " + gelenData.siparis_adres + " Amasya 05000")!!.toDouble()
                                                 val adres = LatLng(lat, long)
-                                                var myMarker = mMap.addMarker(MarkerOptions().position(adres).title(gelenData.musteri_ad_soyad).snippet(gelenData.siparis_adres + " / " + gelenData.siparis_apartman))
+                                                var myMarker = mMap.addMarker(MarkerOptions().position(adres).title(gelenData.musteri_ad_soyad))
                                                 dialogGizle()
                                                 myMarker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.order_map))
                                                 myMarker.tag = gelenData.siparis_key
-                                                val id = gelenData.siparis_mah.toString()
-                                                myMarker.snippet = id
+                                                val mahalle = gelenData.siparis_mah.toString()
+                                                myMarker.snippet = mahalle
+                                                Log.e("it mah", mahalle)
+
                                             }
 
 
                                             mMap.setOnMarkerClickListener {
                                                 it.tag
+                                                it.snippet
+
+                                                Log.e("it snip", it.snippet)
+                                                Log.e("it tag", it.tag.toString())
 
                                                 var bottomSheetDialog = BottomSheetDialog(this@MapsActivity)
 
@@ -752,8 +763,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                                             }
 
 
-
-
                                                         } catch (e: Exception) {
                                                             Log.e("haritalar", e.message.toString())
                                                         }
@@ -931,7 +940,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
                 } else {
                     dialogGizle()
-                   Toast.makeText(this@MapsActivity,"Sipariş Yok",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MapsActivity, "Sipariş Yok", Toast.LENGTH_LONG).show()
                 }
             }
 
@@ -1001,6 +1010,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
             override fun onDataChange(p0: DataSnapshot) {
                 kullaniciAdi = p0.child("user_name").value.toString()
+                handler.postDelayed(Runnable { veri() }, 1250)
             }
         })
     }

@@ -23,8 +23,8 @@
         map:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_centerInParent="true"
         app:layout_constraintVertical_bias="0.478"
         map:layout_constraintBottom_toBottomOf="@+id/map"

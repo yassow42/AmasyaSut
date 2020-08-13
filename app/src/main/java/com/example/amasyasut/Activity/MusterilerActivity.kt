@@ -81,7 +81,6 @@ class MusterilerActivity : AppCompatActivity() {
 
     private fun mahalleEkle() {
 
-        mahalleler.add("Market")
         mahalleler.add("Akbilek")
         mahalleler.add("Aşağı")
         mahalleler.add("Bahçeleriçi")
@@ -107,6 +106,23 @@ class MusterilerActivity : AppCompatActivity() {
         mahalleler.add("Koza")
         mahalleler.add("Kurşunlu")
         mahalleler.add("Mehmet Paşa")
+        mahalleler.add("Nergiz")
+        mahalleler.add("Orman Bağları")
+        mahalleler.add("Pirinççi")
+        mahalleler.add("Şamlar")
+        mahalleler.add("Saraycık")
+        mahalleler.add("Sarılar")
+        mahalleler.add("Savadiye")
+        mahalleler.add("Şehirüstü")
+        mahalleler.add("Şeyhcui")
+        mahalleler.add("Sofular")
+        mahalleler.add("Üçler")
+        mahalleler.add("Yazı Bağları")
+        mahalleler.add("Yeşilyenice")
+        mahalleler.add("Yukarı")
+        mahalleler.add("Yüzevler")
+
+
 
     }
 
